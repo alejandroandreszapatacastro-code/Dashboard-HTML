@@ -1,0 +1,20 @@
+const burger=document.querySelector('.burger'),menu=document.querySelector('.menu');
+burger?.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)});
+menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.classList.remove('open')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+ const c=b.dataset.cat;document.querySelectorAll('.prod[data-cat]').forEach(p=>p.classList.toggle('hide',c!=='todos'&&p.dataset.cat!==c))}));
+const f=document.getElementById('contact-form');
+f?.addEventListener('submit',e=>{e.preventDefault();let ok=true;
+ const v={nombre:f.nombre.value.trim(),email:f.email.value.trim(),mensaje:f.mensaje.value.trim()};
+ const set=(k,m)=>{f.querySelector(`[data-err="${k}"]`).textContent=m;if(m)ok=false};
+ set('nombre',v.nombre.length<2?'Ingresa tu nombre completo.':v.nombre.length>100?'Máximo 100 caracteres.':'');
+ set('email',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)&&v.email.length<255?'':'Ingresa un correo válido.');
+ set('mensaje',v.mensaje.length<10?'El mensaje debe tener al menos 10 caracteres.':v.mensaje.length>1000?'Máximo 1000 caracteres.':'');
+ if(!ok)return;
+ const body=encodeURIComponent(`Nombre: ${v.nombre}\nEmail: ${v.email}\n\n${v.mensaje}`);
+ window.location.href=`mailto:ventas@bodegarealicores.co?subject=${encodeURIComponent('Consulta desde la web')}&body=${body}`;
+ document.querySelector('.ok').classList.add('show');f.reset()});
+document.getElementById('year')&&(document.getElementById('year').textContent=new Date().getFullYear());

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario de contacto y datos de ubicación de NovaTech.">
+  <title>Contacto — NovaTech</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+    <!-- Botón hamburguesa (solo móvil/tablet) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <!-- Overlay para cerrar el menú al hacer clic fuera -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Sidebar fijo con navegación -->
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <a class="sidebar__logo" href="index.html">Nova<span>Tech</span></a>
+      <nav class="sidebar__nav">
+        <a class="sidebar__link" href="index.html">🏠 Inicio</a>
+        <a class="sidebar__link" href="nosotros.html">👥 Nosotros</a>
+        <a class="sidebar__link" href="productos.html">📦 Productos</a>
+        <a class="sidebar__link" href="clientes.html">💬 Clientes</a>
+        <a class="sidebar__link" href="contacto.html">✉️ Contacto</a>
+      </nav>
+      <p class="sidebar__footer">© 2026 NovaTech S.A.<br>Todos los derechos reservados.</p>
+    </aside>
+
+
+  <!-- Contenido principal de la página -->
+  <main class="content" id="main">
+    <!-- CONTACTO -->
+    <section class="section" aria-labelledby="contacto-title">
+      <h2 class="section__title reveal" id="contacto-title">Contáctanos</h2>
+      <p class="section__subtitle reveal">Completa el formulario y te responderemos en menos de 24 horas hábiles.</p>
+
+      <div class="contact-layout">
+        <!-- FORMULARIO con validación accesible en JavaScript -->
+        <form class="form reveal" id="contactForm" novalidate>
+          <div class="form__group">
+            <label class="form__label" for="nombre">Nombre completo</label>
+            <input class="form__input" type="text" id="nombre" name="nombre"
+                   placeholder="Ej. María González" autocomplete="name"
+                   aria-describedby="nombreError" required>
+            <span class="form__error" id="nombreError" role="alert"></span>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="email">Correo electrónico</label>
+            <input class="form__input" type="email" id="email" name="email"
+                   placeholder="nombre@correo.com" autocomplete="email"
+                   aria-describedby="emailError" required>
+            <span class="form__error" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="asunto">Asunto</label>
+            <input class="form__input" type="text" id="asunto" name="asunto"
+                   placeholder="¿En qué podemos ayudarte?" aria-describedby="asuntoError" required>
+            <span class="form__error" id="asuntoError" role="alert"></span>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="mensaje">Mensaje</label>
+            <textarea class="form__input" id="mensaje" name="mensaje" rows="5"
+                      placeholder="Cuéntanos los detalles de tu proyecto…"
+                      aria-describedby="mensajeError" required></textarea>
+            <span class="form__error" id="mensajeError" role="alert"></span>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- DATOS DE CONTACTO + MAPA -->
+        <aside class="contact-info reveal reveal--d1">
+          <div class="contact-info__item">
+            <span class="contact-info__icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p>Av. Insurgentes Sur 1234, CDMX, México</p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Teléfono</strong>
+              <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Correo</strong>
+              <p><a href="mailto:hola@novatech.mx">hola@novatech.mx</a></p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <span class="contact-info__icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Horario</strong>
+              <p>Lunes a viernes, 9:00 – 18:00 hrs</p>
+            </div>
+          </div>
+
+          <div class="contact-info__map">
+            <iframe title="Mapa de la ubicación de NovaTech"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-99.1700%2C19.4100%2C-99.1500%2C19.4300&layer=mapnik&marker=19.42%2C-99.16"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 NovaTech S.A. — Sitio desarrollado con HTML5, CSS3 y JavaScript puro.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Testimonios y clientes de NovaTech: casos de éxito en transformación digital.">
+  <title>Clientes — NovaTech</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+    <!-- Botón hamburguesa (solo móvil/tablet) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <!-- Overlay para cerrar el menú al hacer clic fuera -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Sidebar fijo con navegación -->
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <a class="sidebar__logo" href="index.html">Nova<span>Tech</span></a>
+      <nav class="sidebar__nav">
+        <a class="sidebar__link" href="index.html">🏠 Inicio</a>
+        <a class="sidebar__link" href="nosotros.html">👥 Nosotros</a>
+        <a class="sidebar__link" href="productos.html">📦 Productos</a>
+        <a class="sidebar__link" href="clientes.html">💬 Clientes</a>
+        <a class="sidebar__link" href="contacto.html">✉️ Contacto</a>
+      </nav>
+      <p class="sidebar__footer">© 2026 NovaTech S.A.<br>Todos los derechos reservados.</p>
+    </aside>
+
+
+  <!-- Contenido principal de la página -->
+  <main class="content" id="main">
+    <!-- TESTIMONIOS: CARRUSEL -->
+    <section class="section" aria-labelledby="testimonios-title">
+      <h2 class="section__title reveal" id="testimonios-title">Lo que dicen nuestros clientes</h2>
+      <p class="section__subtitle reveal">Historias reales de empresas que crecieron con nosotros.</p>
+
+      <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+          <div class="carousel__slide">
+            <article class="card testimonial">
+              <p class="testimonial__quote">“NovaTech transformó por completo nuestra operación. El CRM redujo nuestros tiempos de respuesta a clientes en un 60%.”</p>
+              <p class="testimonial__author">Mariana Duarte</p>
+              <p class="testimonial__company">Gerente de Operaciones, Logística Andina</p>
+            </article>
+          </div>
+          <div class="carousel__slide">
+            <article class="card testimonial">
+              <p class="testimonial__quote">“El equipo entendió nuestra visión desde el primer día. La tienda en línea superó nuestras metas de ventas en el primer trimestre.”</p>
+              <p class="testimonial__author">Jorge Herrera</p>
+              <p class="testimonial__company">Fundador, Café Origen</p>
+            </article>
+          </div>
+          <div class="carousel__slide">
+            <article class="card testimonial">
+              <p class="testimonial__quote">“Profesionalismo y calidad en cada entrega. Su panel de analítica nos dio visibilidad total del negocio por primera vez.”</p>
+              <p class="testimonial__author">Elena Castro</p>
+              <p class="testimonial__company">Directora de Marketing, Grupo Vidal</p>
+            </article>
+          </div>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Testimonio anterior">‹</button>
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Testimonio siguiente">›</button>
+        <div class="carousel__dots" role="tablist" aria-label="Seleccionar testimonio"></div>
+      </div>
+    </section>
+
+    <!-- LOGOS DE CLIENTES -->
+    <section class="section" aria-labelledby="logos-title">
+      <h2 class="section__title reveal" id="logos-title">Confían en nosotros</h2>
+      <p class="section__subtitle reveal">Empresas de diversos sectores que ya forman parte de la familia NovaTech.</p>
+      <div class="logo-grid">
+        <div class="ph ph--a reveal" role="img" aria-label="Logotipo de Logística Andina">LA</div>
+        <div class="ph ph--b reveal" role="img" aria-label="Logotipo de Café Origen">CO</div>
+        <div class="ph ph--c reveal" role="img" aria-label="Logotipo de Grupo Vidal">GV</div>
+        <div class="ph ph--d reveal" role="img" aria-label="Logotipo de Meridiana X">MX</div>
+        <div class="ph ph--a reveal" role="img" aria-label="Logotipo de SaludFamilia">SF</div>
+        <div class="ph ph--b reveal" role="img" aria-label="Logotipo de TecnoBank">TB</div>
+        <div class="ph ph--c reveal" role="img" aria-label="Logotipo de NaturaSur">NA</div>
+        <div class="ph ph--d reveal" role="img" aria-label="Logotipo de PuertoSur">PU</div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <article class="card" style="text-align: center;">
+        <h3 class="card__title" style="margin-bottom: var(--space-sm);">¿Quieres ser el siguiente caso de éxito?</h3>
+        <a class="btn btn--primary" href="contacto.html">Contáctanos hoy</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 NovaTech S.A. — Sitio desarrollado con HTML5, CSS3 y JavaScript puro.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
